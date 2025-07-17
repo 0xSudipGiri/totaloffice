@@ -4,23 +4,9 @@ import { Input } from '@/components/ui/input';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-<<<<<<< HEAD
-import { Edit3, Save, X, LogOut, User, Mail, Phone, MapPin, AlertCircle } from 'lucide-react';
+import { Edit3, Save, X, LogOut, User, Mail, Phone, MapPin, AlertCircle, FilePlus } from 'lucide-react';
 import axios from 'axios';
 import { authService } from '@/services/authService';
-=======
-import {
-  Edit3,
-  Save,
-  X,
-  LogOut,
-  User,
-  Mail,
-  Phone,
-  MapPin,
-  FilePlus,
-} from 'lucide-react';
->>>>>>> d0196f2e08c6ba1d2b344cc9f88686b8c0b603f4
 
 interface CustomerDetailsProps {
   username: string;
@@ -48,7 +34,6 @@ interface CustomerInfo {
   };
 }
 
-<<<<<<< HEAD
 interface UserProfile {
   _id?: string;
   name: string;
@@ -65,16 +50,6 @@ interface UserProfile {
   createdAt?: Date;
 }
 
-const CustomerDetails: React.FC<CustomerDetailsProps> = ({ username, userType, onLogout }) => {
-  const { toast } = useToast();
-  const [isEditing, setIsEditing] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-  const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
-  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
-  
-  // Default customer info structure
-=======
 const CustomerDetails: React.FC<CustomerDetailsProps> = ({
   username,
   userType,
@@ -82,9 +57,11 @@ const CustomerDetails: React.FC<CustomerDetailsProps> = ({
 }) => {
   const { toast } = useToast();
   const [isEditing, setIsEditing] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
+  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [uploadedDocs, setUploadedDocs] = useState<File[]>([]);
-
->>>>>>> d0196f2e08c6ba1d2b344cc9f88686b8c0b603f4
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
     name: username,
     email: '',
@@ -393,17 +370,17 @@ const CustomerDetails: React.FC<CustomerDetailsProps> = ({
     }));
   };
 
-<<<<<<< HEAD
   const handleDocumentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       setDocument(file);
-=======
+    }
+  };
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const fileArray = Array.from(e.target.files);
       setUploadedDocs(fileArray);
->>>>>>> d0196f2e08c6ba1d2b344cc9f88686b8c0b603f4
     }
   };
 
