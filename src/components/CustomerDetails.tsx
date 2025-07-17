@@ -335,7 +335,7 @@ const CustomerDetails: React.FC<CustomerDetailsProps> = ({
             duration: 3000,
             className: 'bg-red-50 border-red-100 text-red-700',
             style: {
-              backgroundColor: 'rgba(239, 68, 68, 0.1)',
+              backgroundColor: 'rgba(236, 16, 16, 0.1)',
               color: '#ef4444',
               borderColor: '#ef4444',
             },
